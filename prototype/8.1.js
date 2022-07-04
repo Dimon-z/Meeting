@@ -65,12 +65,12 @@ const hamster = {
 };
 
 const speedy = {
-    stomach: [],
+  stomach: [],
   __proto__: hamster,
 };
 
 const lazy = {
-    stomach: [],
+  stomach: [],
   __proto__: hamster,
 };
 
@@ -82,4 +82,3 @@ console.log(speedy.stomach); // apple
 
 // У этого хомяка тоже есть еда. Почему? Исправьте
 console.log(lazy.stomach); // apple
-

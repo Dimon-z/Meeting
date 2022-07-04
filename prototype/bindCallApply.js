@@ -43,4 +43,3 @@ zpha.myBind(moscow, 'frontend', '9')();
 zpha.myBind(piter, '1')();
 
 zpha.myBind(regioni, 1, 2)();
-
