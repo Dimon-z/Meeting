@@ -11,16 +11,6 @@ const regioni = {
 function zpha(job, staj) {
   console.log(`Зп:${this.zp}, Работа:${job}, Стаж:${staj}`);
 }
-
-/* function myBind(fn, obj, ...rest) {
-  return function () {
-    Object.fn = fn;
-    obj.__proto__ = Object;
-    obj.fn(...rest);
-  };
-}
-myBind(zpha, zpInCity, 'frontend', '9')(); */
-
 Function.prototype.myApply = function (obj,args) {
   obj.fn = this;
   return obj.fn(...args);
