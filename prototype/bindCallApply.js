@@ -27,12 +27,13 @@ Function.prototype.myBind = function (obj,...args) {
   let bindSymbol = Symbol("bind");
   obj[bindSymbol] = this;
   return function (...rest) {
-    obj[bindSymbol](...rest,...args);
+    args.splice(0,[rest].length,...rest)
+    obj[bindSymbol](...args);
   }
 };
 
 zpha.myBind(moscow, 'frontend', '9')();
 
-zpha.myBind(piter, '1')();
+zpha.myBind(piter, '1')( 0, 4);
 
-zpha.myBind(regioni, 3, 4)(1, 2);
+zpha.myBind(regioni, 3, 4)(1);
