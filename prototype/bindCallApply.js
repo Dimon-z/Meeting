@@ -27,8 +27,7 @@ Function.prototype.myBind = function (obj,...args) {
   let bindSymbol = Symbol("bind");
   obj[bindSymbol] = this;
   return function (...rest) {
-    args.splice(0,[rest].length,...rest)
-    obj[bindSymbol](...args);
+  obj[bindSymbol](...args,...rest);
   }
 };
 
@@ -37,3 +36,5 @@ zpha.myBind(moscow, 'frontend', '9')();
 zpha.myBind(piter, '1')( 0, 4);
 
 zpha.myBind(regioni, 3, 4)(1);
+
+zpha.bind(moscow, 3)(1, 7, 6);
