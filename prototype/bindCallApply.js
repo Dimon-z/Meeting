@@ -12,8 +12,9 @@ function zpha(job, staj) {
   console.log(`Зп:${this.zp}, Работа:${job}, Стаж:${staj}`);
 }
 Function.prototype.myApply = function (obj,args) {
-  obj.fn = this;
-  return obj.fn(...args);
+  let applySymbol = Symbol("apply");
+  obj[applySymbol] = this;
+  return obj[applySymbol](...args);
 };
 
 zpha.myApply(moscow, ['frontend']);
@@ -23,13 +24,15 @@ zpha.myApply(piter, ['1']);
 zpha.myApply(regioni, [1, 2]);
 
 Function.prototype.myBind = function (obj,...args) {
-  obj.fn = this;
-  return function () {
-    obj.fn(...args);
+  let bindSymbol = Symbol("bind");
+  obj[bindSymbol] = this;
+  return function (...rest) {
+    obj[bindSymbol](...rest,...args);
   }
 };
+
 zpha.myBind(moscow, 'frontend', '9')();
 
 zpha.myBind(piter, '1')();
 
-zpha.myBind(regioni, 1, 2)();
+zpha.myBind(regioni, 3, 4)(1, 2);
