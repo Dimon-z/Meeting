@@ -35,6 +35,14 @@ zpha.myBind(moscow, 'frontend', '9')();
 
 zpha.myBind(piter, '1')( 0, 4);
 
-zpha.myBind(regioni, 3, 4)(1);
+zpha.myBind(regioni, 3)(1,7,9);
 
 zpha.bind(moscow, 3)(1, 7, 6);
+
+Function.prototype.myCall = function (obj,...args){
+  let callSymbol = Symbol("call");
+  obj[callSymbol] = this;
+  return obj[callSymbol]([args]);
+}
+
+zpha.myCall(moscow, 1, 2, 3, 4);
