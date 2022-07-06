@@ -19,3 +19,5 @@ Function.prototype.defer = function (ms) {
 };
 
 sum.defer(1000)(1, 2); // выведет 3 через 1 секунду.
+
+f.apply.apply.apply;
