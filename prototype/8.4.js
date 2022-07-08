@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 let dictionary = Object.create(null, {
     toString: { // определяем свойство toString
       value() { // значение -- это функция
@@ -15,3 +16,4 @@ for(let key in dictionary) {
 
 // ваш метод toString в действии
 console.log(dictionary); // "apple,__proto__"
+
