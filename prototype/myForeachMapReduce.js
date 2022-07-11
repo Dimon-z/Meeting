@@ -2,7 +2,7 @@
      ... делать что-то с item
   }); */
 
-Array.prototype.myForeach = function (fn, thisArg = {}) {
+/* Array.prototype.myForeach = function (fn, thisArg = {}) {
   const array = [this];
   if (!thisArg) {
     const myForeachSymbol = Symbol('myForeach');
@@ -54,31 +54,10 @@ const testarr = arr.myMap(Math.pow);
 console.log(mappedarr);
 console.log(testarr);
 
+ */
 
-let value = arr.reduce(function(previousValue, item, index, array) {
-  // ...
-}, [initial])
-
-array.reduce(callback[, initialValue])
-
-Array.prototype.myReduce = function (fn, initVal) {
-  const array = [];
-  const newarr = [];
-  if (!thisArg) {
-    const myReduceSymbol = Symbol('myReduce');
-    thisArg[myReduceSymbol] = fn;
-    for (let index = 0; index < array.length; index++) {
-      newarr[index] = thisArg[myReduceSymbol](this[index], index, array);
-    }
-  } else {
-    for (let index = 0; index < this.length; index++) {
-      newarr[index] = fn(this[index], index, array);
-    }
-    return newarr;
-  }
-};
 Array.prototype.myReduce = function(fn, ...arguments) {
-  const arr = [];
+  let arr = [];
   arr = this, len = arr.length, i = 0;
     if (arguments.length >= 2) {
       initValue = arguments[1];
@@ -87,14 +66,26 @@ Array.prototype.myReduce = function(fn, ...arguments) {
         i++;
       }
       if (i >= len) {
-        return console.log("Error");
+        return console.log("TypeError: Reduce of empty array with no initial value");
       }
       initValue = arr[i++];
     }
-    for (i < len; i++) {
+    for (i; i < len; i++) {
       if (i in arr) {
         initValue = fn(initValue, arr[i], i, arr);
       }
     }
     return initValue;
   };
+
+let arrr = [1, 2, 3, 4, 5];
+
+let result = arrr.myReduce((sum, current) => sum + current, 0);
+
+console.log(result);
+
+let arrrr = [];
+
+
+arrrr.myReduce((sum, current) => sum + current);
+
