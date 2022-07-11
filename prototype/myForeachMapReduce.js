@@ -61,8 +61,8 @@ let value = arr.reduce(function(previousValue, item, index, array) {
 
 array.reduce(callback[, initialValue])
 
-Array.prototype.myReduce = function (fn, thisArg = {}) {
-  const array = [this];
+Array.prototype.myReduce = function (fn, initVal) {
+  const array = [];
   const newarr = [];
   if (!thisArg) {
     const myReduceSymbol = Symbol('myReduce');
@@ -77,3 +77,24 @@ Array.prototype.myReduce = function (fn, thisArg = {}) {
     return newarr;
   }
 };
+Array.prototype.myReduce = function(fn, ...arguments) {
+  const arr = [];
+  arr = this, len = arr.length, i = 0;
+    if (arguments.length >= 2) {
+      initValue = arguments[1];
+    } else {
+      while (i < len && ! (i in arr)) {
+        i++;
+      }
+      if (i >= len) {
+        return console.log("Error");
+      }
+      initValue = arr[i++];
+    }
+    for (i < len; i++) {
+      if (i in arr) {
+        initValue = fn(initValue, arr[i], i, arr);
+      }
+    }
+    return initValue;
+  };
