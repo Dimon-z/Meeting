@@ -36,7 +36,7 @@ class Clock {
 class ExtendedClock extends Clock {
   constructor( options ) {
     super( options );
-    let {precision = 1000 } = options;
+    let {precision = 10000 } = options;
     this.precision = precision;
   }
 
@@ -47,5 +47,5 @@ class ExtendedClock extends Clock {
 }
 
 
-const clock = new ExtendedClock({ template: 'h:m:s', precision:10000 });
+const clock = new ExtendedClock({ template: 'h:m:s', });
 clock.start();

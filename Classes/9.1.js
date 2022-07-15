@@ -1,4 +1,4 @@
-/* class Piton {
+class Piton {
   constructor(name, hp, maxStamina, healAmount, farmSpeed, attackDMG) {
     this.name = name;
     this.hp = hp;
@@ -26,7 +26,7 @@ boevoyPiton.move();
 boevoyPiton.selfHeal();
 boevoyPiton.regenerateStamina();
 boevoyPiton.move();
- */
+
 class Clock {
   constructor({ template }) {
     this.template = template;
