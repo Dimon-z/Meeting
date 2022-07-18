@@ -8,23 +8,26 @@ For example, given the starting position 0 and the swaps [(0, 1), (1, 2), (1, 0)
     The second swap moves the ball from 1 to 2
     The final swap doesn't affect the position of the ball.
 
-So
+So */
 
-swaps = [[0,1], [1,2], [1, 0]]
-find_the_ball(0, swaps) == 2
+let swaps = [[0, 1], [1, 2], [1, 0]];
+/* find_the_ball(0, swaps) == 2 */
 
-There aren't necessarily only three cups in this game, but there will be at least two. You can assume all swaps are valid, and involve two distinct indices.
+/* There aren't necessarily only three cups in this game, but there will be at least two. You can assume all swaps are valid, and involve two distinct indices.
  */
 
-function play(ballStartCup,swaps) {
-    let currentBallPosition = ballStartCup;
-    swaps.array.forEach(element => {
-        
-    });
+function play(ballStartCup, swaps) {
+  let currentBallPosition = ballStartCup;
+  swaps.forEach((element) => {
+    if (element.includes(currentBallPosition)) {
+      if (element[0] == currentBallPosition) {
+        currentBallPosition = element[1];
+      } else {
+        currentBallPosition = element[0];
+      }
     }
+  });
+  return currentBallPosition;
+}
 
-}
-function calculateCurrentBallPosition([item]) {
-    if [item].includes(currentBallPosition)
-    
-}
+console.log(play(1, swaps));
