@@ -1,9 +1,9 @@
 function luckCheck(str) {
     const number = +str;
-    if (str === '') {
+    if ( str.trim() === '') {
       throw new Error ('Error string is empty');
     }
-    if (isNaN(+str) || str === "" || /[a-zA-Z]/.test(str) || str === null) {
+    if (isNaN(+str) || /[a-zA-Z]/.test(str) || str === null) {
       throw new Error ('Error enter valid string that contains number');
     } else {
     const length = str.length;
@@ -22,4 +22,4 @@ function luckCheck(str) {
   }
 
   
-  console.log(luckCheck(`8232e246`))
+  console.log(luckCheck(``))
