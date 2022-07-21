@@ -3,7 +3,7 @@ function luckCheck(str) {
     if (str === '') {
       throw new Error ('Error string is empty');
     }
-    if (isNaN(number)) {
+    if (isNaN(number)||!!(~str.toLowerCase().indexOf('e'))) {
       throw new Error ('Error enter valid string that contains number');
     } else {
     const length = str.length;
@@ -20,3 +20,6 @@ function luckCheck(str) {
     }
   }
   }
+
+  
+  console.log(luckCheck(`82322246`))
