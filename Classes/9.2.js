@@ -50,11 +50,13 @@ class Animal {
   
   class Rabbit extends Animal {
     constructor(name) {
-      super(name);
+     
       this.created = Date.now();
+      super(name); 
+
     }
   }
   
-  let rabbit = new Rabbit("Белый кролик"); 
-  console.log(rabbit);
+/*   let rabbit = new Rabbit("Белый кролик"); 
+  console.log(rabbit); */
 
