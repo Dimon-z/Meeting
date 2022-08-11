@@ -9,8 +9,12 @@ class Piton {
     }
 
     #canFly = false;
+
+    canFly = true;
     
     _hp = 100;
+
+    _test = 1;
 
     set hp(value) {
       if (value < 0) throw new Error("hp can`t be lower zero");
@@ -31,3 +35,15 @@ class Piton {
   
     regenerateStamina() { this.stamina = this.maxStamina; }
   }
+
+  class Mage extends Piton {
+    constructor() {
+      super()}
+
+      //private() {console.log(`${super[#canFly]}`)}
+
+      public() {console.log(super._test) }
+  }
+
+ console.log( new Mage(`mage`)._test)
+ //console.log( new Mage(`mage`).#canFly)
