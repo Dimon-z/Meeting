@@ -47,6 +47,8 @@ console.log(obj instanceof ForInstanceOf);
 
 /* obj.__proto__.__proto__.__proto__ === Class.prototype? */
 
+//-----------------  далее примеси-------------------------
+
 class Weapon {
 constructor(name, dmg){
     this.name = name;
