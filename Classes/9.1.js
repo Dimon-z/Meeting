@@ -1,4 +1,4 @@
-class Piton {
+export class Piton {
   constructor(name, hp, maxStamina, healAmount, farmSpeed, attackDMG) {
     this.name = name;
     this.hp = hp;
@@ -9,24 +9,29 @@ class Piton {
     this.stamina = 0;
   }
 
-  farm() { console.log(`я фармлю ${this.farmSpeed} шт. золота`); }
+  farm() { console.log(`я фармлю ${this.farmSpeed} шт. золота`); 
+  return this }
 
-  move() { console.log(`я иду на ${this.stamina} метров`); }
+  move() { console.log(`я иду на ${this.stamina} метров`);
+  return this }
 
-  selfHeal() { console.log(`я лечусь на ${this.healAmount} хп`); }
+  selfHeal() { console.log(`я лечусь на ${this.healAmount} хп`);
+  return this }
 
-  attack(targetName) { console.log(`я снимаю ${targetName} ${this.attackDMG} хп`); }
+  attack(targetName) { console.log(`я снимаю ${targetName} ${this.attackDMG} хп`);
+  return this }
 
-  regenerateStamina() { this.stamina = this.maxStamina; }
+  regenerateStamina() { this.stamina = this.maxStamina;
+    return this }
 }
 
-const boevoyPiton = new Piton('kusya', 120, 80, 20, 10, 30);
+/* const boevoyPiton = new Piton('kusya', 120, 80, 20, 10, 30);
 boevoyPiton.farm();
 boevoyPiton.move();
 boevoyPiton.selfHeal();
 boevoyPiton.regenerateStamina();
-boevoyPiton.move();
-
+boevoyPiton.move(); */
+/* 
 class Clock {
   constructor({ template }) {
     this.template = template;
@@ -64,3 +69,4 @@ class Clock {
 
 const clock = new Clock({ template: 'h:m:s' });
 clock.start();
+*/
