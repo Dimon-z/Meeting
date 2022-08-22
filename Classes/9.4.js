@@ -45,5 +45,5 @@ class Piton {
       public() {console.log(super._test) }
   }
 
- console.log( new Mage(`mage`)._test)
+ console.log( new Mage(`mage`).canFly)
  //console.log( new Mage(`mage`).#canFly)

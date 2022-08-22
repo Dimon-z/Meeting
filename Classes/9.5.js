@@ -7,11 +7,11 @@ class PowerArray extends Array {
 const arr = new PowerArray(1, 2, 5, 10, 50);
 console.log(arr.isEmpty());
 
-/* let filteredArr = arr.filter(item => item >= 10);
+let filteredArr = arr.filter(item => item >= 10);
 console.log(filteredArr);
 console.log(filteredArr.isEmpty().push(`test`)); // false */
 
-/* class PowerArray extends Array {
+class PowerArray extends Array {
     isEmpty() {
       return this.length === 0;
     }
@@ -31,6 +31,6 @@ console.log(filteredArr.isEmpty().push(`test`)); // false */
   // filteredArr is not PowerArray, but Array
   //console.log(filteredArr.isEmpty()); // Error: filteredArr.isEmpty is not a function
   console.log(filteredArr.push(`test`));
-  console.log(filteredArr) //[ 10, 50, 'test' ] */
+  console.log(filteredArr) //[ 10, 50, 'test' ]
 
 

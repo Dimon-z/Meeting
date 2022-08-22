@@ -41,3 +41,41 @@ function checkPitonData(piton) {
 }
 
 checkPitonData(guf);
+
+
+function readUser(json) {
+    let user;
+  
+    try {
+      user = JSON.parse(json);
+    } catch (err) {
+      if (err instanceof SyntaxError) {
+        throw new ReadError("Синтаксическая ошибка", err);
+      } else {
+        throw err;
+      }
+    }
+  
+    try {
+      validateUser(user);
+    } catch (err) {
+      if (err instanceof ValidationError) {
+        throw new ReadError("Ошибка валидации", err);
+      } else {
+        throw err;
+      }
+    }
+  
+  }
+  
+  try {
+    readUser('{bad json}');
+  } catch (e) {
+    if (e instanceof ReadError) {
+      alert(e);
+      // Исходная ошибка: SyntaxError:Unexpected token b in JSON at position 1
+      alert("Исходная ошибка: " + e.cause);
+    } else {
+      throw e;
+    }
+  }
