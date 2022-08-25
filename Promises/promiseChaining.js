@@ -22,7 +22,7 @@ let promise = new Promise(function(resolve, reject) {
 
 promise.then((resultat)=>{
     console.log('line24 '+resultat)
-    resultat+=1
+    resultat += 1
 return resultat
 })
 
@@ -32,17 +32,17 @@ promise.then(function(res) {
     return  res
 })
 
-promise.then((res)=>{
+promise.then((res) => {
     console.log("line36 "+res)
 })
 
 class Thenable {
-    constructor(num){
+    constructor(num) {
        this.num = num
     }
-    then(resolve, reject){
+    then(resolve, reject) {
         console.log(resolve);
-        setTimeout(() => resolve(this.num * 2),1000);
+        setTimeout(() => resolve(this.num * 2), 1000);
     }
 }
 
@@ -54,8 +54,8 @@ new Promise(resolve => resolve(2))
   .catch(console.log); 
 
 new Promise((resolve,reject)=>resolve(1))
-.then(()=>setTimeout(()=>{
+.then(() => setTimeout(() => {
     console.log('here error');
-    return new Error(`JS RIP Now`);
-},2000)).catch(console.log)
-setTimeout(()=>console.log(11),1000)
+    return new Error('JS RIP Now');
+}, 2000)).catch(console.log)
+setTimeout(() => console.log(11), 1000)
