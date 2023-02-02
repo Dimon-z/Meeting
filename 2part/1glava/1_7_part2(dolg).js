@@ -1,0 +1,101 @@
+/* Напишите функцию createCalendar(elem, year, month).
+
+Вызов функции должен создать календарь для заданного месяца month в году year и вставить его в elem.
+
+Календарь должен быть таблицей, где неделя – это <tr>, а день – это <td>. У таблицы должен быть заголовок с
+ названиями дней недели, каждый день – <th>, первым днём недели должен быть понедельник.
+
+Например, createCalendar(cal, 2012, 9) сгенерирует в cal следующий календарь: */
+
+// createCalendar(elem, year, month).
+
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <style>
+    table {
+      border-collapse: collapse;
+    }
+
+    td,
+    th {
+      border: 1px solid black;
+      padding: 3px;
+      text-align: center;
+    }
+
+    th {
+      font-weight: bold;
+      background-color: #E6E6E6;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <div id="calendar"></div>
+
+  <script>
+    const summatorHTML = [`<table>`,`<tr>`,`<th>ПН</th>`,`<th>ВТ</th>`,`<th>СР</th>`,`<th>ЧТ</th>`,`<th>ПТ</th>`,`<th>СБ</th>`,`<th>ВС</th>`,`<tr>`];
+
+      function daysFilling(date,dayOfWeek){
+          if (dayOfWeek === 0  ) {
+              summatorHTML.push(`<td>${date}</td>`)
+              summatorHTML.push(`</tr><tr>`)
+          } else {
+              summatorHTML.push(`<td>${date}</td>`)
+          }
+      }
+      
+      function fillEmptyDaysStart(day) {
+        if (+day === 0) {
+            day = 7
+        }
+        if (day>1) {
+            for (let index = 1; index < day; index++) {
+                summatorHTML.push(`<td></td>`);
+            }
+        }
+    }
+
+      function fillEmptyDaysEnd(day) {
+          if (day === 0){
+            return;
+          }
+          if (day<6) {
+              day = 6;
+              for (let index = 1; index < day; index++) {
+                  summatorHTML.push(`<td>  </td>`);
+              }
+          }
+      }
+      
+      function createCalendar(elem, year, month){
+          const jsMonth = month - 1;
+          const date = new Date(year, jsMonth,)
+          const firstDay = date.getDay()
+          const daysObj = {};
+          const day = 60 * 60 * 24 * 1000;
+          const lastDayOfMonth = new Date(year,month,0).getDate();
+          const lastday = new Date(year,month,0).getDay()
+          for (let i = 0; i < lastDayOfMonth; i++ ) {
+              let newDay = new Date(date.getTime()+day*i)
+              daysObj[i+1] = newDay.getDay() 
+          };
+          fillEmptyDaysStart(firstDay)
+          for (const key in daysObj) {
+              daysFilling(key,daysObj[+key])
+          }
+          fillEmptyDaysEnd(lastday)
+          let hTML = summatorHTML.toString();
+          hTML = hTML.replaceAll(',','')
+          elem.innerHTML = hTML
+          console.log(lastday)
+      }
+    createCalendar(calendar, 2023, 1);
+  </script>
+
+</body>
+</html>
