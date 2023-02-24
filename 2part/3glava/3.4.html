@@ -15,7 +15,7 @@
             onPressedKey = function (event) {
                 pressed.add(event.code);
                 for (let code of codes) {
-                    if (!codes.includes(event.code) || pressed.size>codes.length) {
+                    if (!codes.includes(event.code) || pressed.size > codes.length) {
                         return;
                     }
                     if (!pressed.has(code)) {
