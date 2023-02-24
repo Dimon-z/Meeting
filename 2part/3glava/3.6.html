@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+</head>
+
+<body>
+
+<h1>Start of newerEnding story</h1>
+
+<script>
+  function vosemNaBoku() {
+    while(true) {
+      let bottom = document.documentElement.getBoundingClientRect().bottom;
+      let screenHeight = document.documentElement.clientHeight;
+      if (bottom > screenHeight + 10) {
+        break;
+      }
+      document.body.insertAdjacentHTML("beforeend", `<p>Date: ${new Date()}</p>`);
+    }
+  }
+
+  window.addEventListener('scroll', vosemNaBoku);
+
+  vosemNaBoku();
+</script>
+
+</body>
+</html>
