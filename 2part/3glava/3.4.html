@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function runOnKeys(func, ...codes) {
+            let pressed = new Set();
+            onPressedKey = function (event) {
+                pressed.add(event.code);
+                for (let code of codes) {
+                    if (!codes.includes(event.code) || pressed.size>codes.length) {
+                        return;
+                    }
+                    if (!pressed.has(code)) {
+                        return;
+                    }
+                }
+                pressed.clear();
+                func();
+            };
+            onUnPressedKey = function (event) {
+                pressed.delete(event.code);
+            };
+            document.addEventListener('keydown', onPressedKey)
+            document.addEventListener('keyup', onUnPressedKey)
+
+        }
+        runOnKeys(
+            () => alert("Привет!"),
+            "KeyQ",
+            "KeyW"
+        );
+    </script>
+</body>
+
+</html>
