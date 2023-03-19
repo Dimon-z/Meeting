@@ -1,3 +1,7 @@
+/* Создайте функцию preloadImages(sources, callback), 
+которая загружает все изображения из массива sources и, 
+когда все они будут загружены, вызывает callback */
+
 function preloadImages(sources, callback) {
     let counter = 0;
 
