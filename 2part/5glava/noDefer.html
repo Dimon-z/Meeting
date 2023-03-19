@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>raz</p>
+    <script  src="https://javascript.info/article/script-async-defer/long.js?speed=1"></script>
+    <script  src="./1.js"></script>
+    <p>dva</p>
+    <script  src="https://javascript.info/article/script-async-defer/small.js"></script>
+    <p>trii</p>
+    <script>
+        for (let i = 0; i < 22; i++){
+            document.body.insertAdjacentHTML("afterbegin", `<p>||main + ${i}|| <p>`)
+        }
+    </script>
+</body>
+</html>
