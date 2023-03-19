@@ -28,7 +28,7 @@ for (const value of iterator) {
 
 //Генератор реализует метод return(), который заставляет генератор при выходе остановить выполнение. Мы больше не сможем по нему итерироваться.
 
-function* source() {
+/* function* source() {
   yield 1;
   yield 2;
   yield 3;
@@ -51,3 +51,4 @@ for (const value of generator) {
   console.log(value);
 }
 //ничего не выведет
+ */
