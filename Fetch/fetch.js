@@ -40,3 +40,26 @@ let promise = fetch(url, [options])
   , "opaque"
   , "opaqueredirect"
    };
+//-----------------------------------------------------------------------------//
+   Есть список запрещённых HTTP-заголовков, которые мы не можем установить:
+
+    Accept-Charset, Accept-Encoding
+    Access-Control-Request-Headers
+    Access-Control-Request-Method
+    Connection
+    Content-Length
+    Cookie, Cookie2
+    Date
+    DNT
+    Expect
+    Host
+    Keep-Alive
+    Origin
+    Referer
+    TE
+    Trailer
+    Transfer-Encoding
+    Upgrade
+    Via
+    Proxy-*
+    Sec-*
