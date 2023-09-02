@@ -63,3 +63,69 @@ let promise = fetch(url, [options])
     Via
     Proxy-*
     Sec-*
+
+//----------------------------------------------------------//
+    fetch('https://api.example.com/create', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({ name: 'John', age: 30 })
+})
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
+
+
+  fetch('https://api.example.com/update', {
+  method: 'PUT',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({ id: 123, name: 'Jane', age: 25 })
+})
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
+
+  fetch('https://api.example.com/delete', {
+  method: 'DELETE',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({ id: 123 })
+})
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
+
+
+  const token = 'your-auth-token';
+
+fetch('https://api.example.com/data', {
+  headers: {
+    'Authorization': `Bearer ${token}`,
+  },
+})
+  .then(response => response.json())
+  .then(data => {
+     
+    console.log(data);
+  })
+  .catch(error => {
+ 
+    console.error(error);
+  });
+
